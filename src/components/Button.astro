@@ -1,0 +1,38 @@
+---
+const { href, type = "primary" } = Astro.props;
+let Element = "button";
+if (href) Element = "a";
+---
+
+<Element class="button" {href} data-type={type}>
+    <slot /> 
+</Element>
+
+<style lang="scss">
+    @use '../styles/_abstracts.scss' as *;
+
+    .button {
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+        transition: 0.25s all;
+        cursor: pointer;
+        border: none;
+        line-height: 1;
+        font-size: 1.2rem;
+        border-radius: 6px;
+        
+        &[data-type="primary"] {
+            background: $primary;
+        }
+        
+        &[data-type="secondary"] {
+            background: $secondary;
+        }
+
+        &:hover {
+            background: black;
+        }
+    }
+
+</style>

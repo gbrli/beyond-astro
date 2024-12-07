@@ -1,0 +1,21 @@
+---
+import "../styles/global.scss";
+import Head from './Head.astro';
+import Navigation from '../components/Navigation.astro';
+const {title} = Astro.props;
+---
+
+<html lang="en">
+	<Head title={title}/>
+	<body>
+		<Navigation/>
+		<h1>{title}</h1>
+		<slot/>
+	</body>
+</html>
+
+<style lang="scss" is:global>
+    @use '../styles/abstracts' as *;
+    h1 { color: $primary }
+    h2 { color: $primary }
+</style>

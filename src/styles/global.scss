@@ -1,0 +1,11 @@
+$color-body: hsl(0 15% 90%);
+
+body {
+    font-family: system-ui;
+    font-size: 1.25rem;
+    background: hsl(0 0% 12%);
+    line-height: 1.6;
+    color: $color-body;
+    width: min(100% - 4rem, 55ch);
+    margin-inline: auto;
+}
